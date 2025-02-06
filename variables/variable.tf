@@ -34,8 +34,16 @@ variable "cidr_blocks" {
 }
 
 variable "sg_tags" {
-    type = map
-    default = {
-        Name = "expense-backend-dev"
-    }
-}   
+  type = map(any)
+  default = {
+    Name = "expense-backend-dev"
+  }
+}
+
+/*
+1. command line --> -var 'instance_type=t3.small'
+2 tfvars 
+3 env variables
+3 default values
+5 user prompt
+*/
