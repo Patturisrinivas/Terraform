@@ -18,6 +18,15 @@ data "aws_ami" "joindevops" {
   }
 }
 
+data "aws_vpc" "default" {
+  default = true
+}
+
 output "ami_id" {
   value = data.aws_ami.joindevops.id
+}
+
+output "default_vpc_id" {
+  value = data.aws_vpc.default.id
+  
 }
